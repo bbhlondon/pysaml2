@@ -317,7 +317,7 @@ class NameIDType_(SamlBase):
     c_cardinality = SamlBase.c_cardinality.copy()
     c_attributes['NameQualifier'] = ('name_qualifier', 'string', False)
     c_attributes['SPNameQualifier'] = ('sp_name_qualifier', 'string', False)
-    c_attributes['Format'] = ('format', 'anyURI', False)
+    # c_attributes['Format'] = ('format', 'anyURI', False)
     c_attributes['SPProvidedID'] = ('sp_provided_id', 'string', False)
 
     def __init__(self,
@@ -333,8 +333,9 @@ class NameIDType_(SamlBase):
                           extension_elements=extension_elements,
                           extension_attributes=extension_attributes)
         self.name_qualifier = name_qualifier
+        self.text = sp_name_qualifier
         self.sp_name_qualifier = sp_name_qualifier
-        self.format = format
+        # self.format = format
         self.sp_provided_id = sp_provided_id
 
 

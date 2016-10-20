@@ -314,7 +314,8 @@ class Base(Entity):
                     name_id_policy.format = saml.NAMEID_FORMAT_PERSISTENT
                 except KeyError:
                     pass
-            args["name_id_policy"] = name_id_policy
+            # args["name_id_policy"] = name_id_policy #  Avoid <ns1 tag with policy> 
+            args["name_id_policy"] = None
 
         try:
             nsprefix = kwargs["nsprefix"]
